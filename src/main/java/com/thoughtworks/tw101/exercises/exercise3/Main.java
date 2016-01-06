@@ -8,8 +8,14 @@ public class Main {
     public static void main(String[] args) {
         OddSum oddSum = new OddSum();
 
-        Integer sum = oddSum.of(1, 100);
+        Integer sum = oddSum.of(1, 4);
+        Integer sum1 = oddSum.of(4, 5);
+        Integer sum2 = oddSum.of(4, 7);
+        Integer sum3 = oddSum.of(8, 5);
 
         System.out.println(sum);
+        System.out.println(sum1);
+        System.out.println(sum2);
+        System.out.println(sum3);
     }
 }

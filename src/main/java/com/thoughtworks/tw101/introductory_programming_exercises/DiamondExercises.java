@@ -13,10 +13,30 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
-
+        int totalWidth = 1 + 2*(n-1);
+        for(int currentRow = 0; currentRow < n; currentRow++) {
+            int numStars = 1+(2*currentRow);
+            horizontalLineWithCenteredStars(numStars,totalWidth);
+            System.out.println();
+        }
     }
 
-//    Diamond
+    private static void horizontalLineWithCenteredStars(int numStars, int lineWidth) {
+        int numberOfBlanks = (lineWidth - numStars)/2;
+
+        for(int i = 0; i < numberOfBlanks; i++) {
+            System.out.print(" ");
+        }
+        for(int i = 0; i < numStars; i++) {
+            System.out.print("*");
+        }
+        for(int i = 0; i < numberOfBlanks; i++) {
+            System.out.print(" ");
+        }
+    }
+
+
+    //    Diamond
 //    Given a number n, print a centered diamond. Example for n=3:
 //              *
 //             ***
@@ -24,7 +44,17 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        drawAnIsoscelesTriangle(n);
+        UpsideDownIsocelesTriangle(n);
 
+    }
+    private static void UpsideDownIsocelesTriangle(int n) {
+        int totalWidth = 1 + 2*(n-1);
+        for(int currentRow = n-2; currentRow >= 0; currentRow--) {
+            int numStars = 1 + 2 * currentRow;
+            horizontalLineWithCenteredStars(numStars, totalWidth);
+            System.out.println();
+        }
     }
 
 //    Diamond with Name
@@ -36,6 +66,13 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
-
+        int totalWidth = 1 + 2*(n-1);
+        for(int currentRow = 0; currentRow < n-1; currentRow++) {
+            int numStars = 1 + (2 * currentRow);
+            horizontalLineWithCenteredStars(numStars, totalWidth);
+            System.out.println();
+        }
+        System.out.println("Natalie");
+        UpsideDownIsocelesTriangle(n);
     }
 }
